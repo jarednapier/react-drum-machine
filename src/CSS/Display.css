@@ -1,0 +1,13 @@
+.display-wrapper {
+    height: 50px;
+    width: 250px;
+    background-color: orchid;
+    border-radius: 80px;
+}
+
+#display {
+    text-align: center;
+    padding-top: 9px;
+    font-size: 1.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
