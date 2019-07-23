@@ -19,25 +19,25 @@ import mp3_woodStress from '../Media/woodStress.mp3';
 
 export const SoundClips = {
     clipSetOne: [
-                    mp3_bizzareGuitar,
-                    mp3_gong,
-                    mp3_humanHeartBeat,
-                    mp3_lightPullChain,
-                    mp3_messageAlertThree,
-                    mp3_pianoBreaking,
-                    mp3_shellFalling,
-                    mp3_tokeExhale,
-                    mp3_waterPhone
+                    [mp3_bizzareGuitar, "Bizarre Guitar", "Q"],
+                    [mp3_gong, "Gong", "W"],
+                    [mp3_humanHeartBeat, "Heart Beat", "E"],
+                    [mp3_lightPullChain, "Pull Chain", "A"],
+                    [mp3_messageAlertThree, "Alert 3", "S"],
+                    [mp3_pianoBreaking, "Piano Breaking", "D"],
+                    [mp3_shellFalling, "Shell Dropping", "Z"],
+                    [mp3_tokeExhale, "Toking", "X"],
+                    [mp3_waterPhone, "Creepy", "C"]
                 ],
     clipSetTwo: [
-                    mp3_dragonRoar,
-                    mp3_halloween,
-                    mp3_iceCubes,
-                    mp3_messageAlert,
-                    mp3_messageAlertTwo,
-                    mp3_pokerChips,
-                    mp3_shootArrow,
-                    mp3_unscrewBulb,
-                    mp3_woodStress
+                    [mp3_dragonRoar, "Dragon Roar", "Q"],
+                    [mp3_halloween, "Halloween", "W"],
+                    [mp3_iceCubes, "Ice", "E"],
+                    [mp3_messageAlert, "Alert", "A"],
+                    [mp3_messageAlertTwo, "Alert 2", "S"],
+                    [mp3_pokerChips, "Poker Chips", "D"],
+                    [mp3_shootArrow, "Arrow Shooting", "Z"],
+                    [mp3_unscrewBulb, "Lightbulb", "X"],
+                    [mp3_woodStress, "Bending Wood", "C"]
                 ]
 };
