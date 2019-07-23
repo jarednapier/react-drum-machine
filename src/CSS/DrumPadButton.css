@@ -1,0 +1,30 @@
+.drum-pad {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    border-radius: 20px;
+    outline: none;
+}
+
+.drum-pad:active {
+    background-color: aquamarine;
+
+}
+
+.drum-pad p:active {
+    padding-top: 37px;
+    padding-left: 2px;
+}
+
+.drum-pad-text { 
+    position: relative;
+    bottom: 21px;
+    height: 60px;
+    width: 97px;
+    right: 6px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding-top: 35px;
+}

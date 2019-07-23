@@ -28,6 +28,12 @@ export default class App extends React.Component {
       clipSet: this.state.clipSetTwoToggle ? SoundClips.clipSetTwo : SoundClips.clipSetOne
     });
   };
+
+  handleDrumEvent = (str) => {
+    this.setState({
+      displayText: str
+    });
+  };
   
   render() {
     return (
@@ -36,7 +42,7 @@ export default class App extends React.Component {
         <Display display={this.state.displayText} />
         <Toggle title={"Power"} toggle={this.state.powerToggle} toggleFunction={this.powerToggle} />
         <Toggle title={"Bank"} toggle={this.state.clipSetTwoToggle} toggleFunction={this.clipSetToggle} />
-        <DrumPadButton audioClip={this.state.powerToggle ? "" :this.state.clipSet[4][0]} />
+        <DrumPadButton audioClip={this.state.powerToggle ? "" :this.state.clipSet[4][0]} id={this.state.clipSet[4][2]} description={this.state.clipSet[4][1]} handleEvent={this.handleDrumEvent} />
       </div>
     );
   }
