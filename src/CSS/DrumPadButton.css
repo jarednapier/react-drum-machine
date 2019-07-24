@@ -6,14 +6,30 @@
     outline: none;
 }
 
-.drum-pad:active {
-    background-color: aquamarine;
-
+.pad-wrapper {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
 }
 
-.drum-pad p:active {
-    padding-top: 37px;
+.drum-pad:active {
+    background-color: aquamarine;
+    border-style: inset;
+}
+
+.drum-pad-active {
+    background-color: aquamarine;
+    border-style: inset;
+}
+
+.drum-pad-text:active {
     padding-left: 2px;
+    padding-top: 38px;
+}
+
+.drum-pad-text-active {
+    padding-left: 2px;
+    margin-top: 23px;
 }
 
 .drum-pad-text { 
@@ -27,4 +43,5 @@
     font-weight: bold;
     font-size: 1.5em;
     padding-top: 35px;
+    user-select: none;
 }

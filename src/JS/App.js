@@ -18,7 +18,8 @@ export default class App extends React.Component {
 
   powerToggle = () => {
     this.setState({
-      powerToggle: !this.state.powerToggle
+      powerToggle: !this.state.powerToggle,
+      displayText: ""
     });
   };
 
@@ -36,13 +37,44 @@ export default class App extends React.Component {
   };
   
   render() {
+    const clipState = this.state.clipSet;
+    const drumPadList = this.state.clipSet.map((arr) => {
+      return (
+        <DrumPadButton
+          key={arr[1]}
+          id={arr[2]}
+          description={arr[1]}
+          audioClip={this.state.powerToggle ? "" : arr[0]}
+          handleEvent={this.handleDrumEvent}
+          numId={clipState.indexOf(arr)}
+          power={this.state.powerToggle}
+        />
+      );
+    })
     return (
       <div className="drum-machine-container" id="drum-machine">
-        Thanks for makin me a fighter oh oh
-        <Display display={this.state.displayText} />
-        <Toggle title={"Power"} toggle={this.state.powerToggle} toggleFunction={this.powerToggle} />
-        <Toggle title={"Bank"} toggle={this.state.clipSetTwoToggle} toggleFunction={this.clipSetToggle} />
-        <DrumPadButton audioClip={this.state.powerToggle ? "" :this.state.clipSet[4][0]} id={this.state.clipSet[4][2]} description={this.state.clipSet[4][1]} handleEvent={this.handleDrumEvent} />
+        <div className="drum-pad-elements">
+          <div className='drum-pad-row'>
+            {drumPadList[0]}
+            {drumPadList[1]}
+            {drumPadList[2]}
+          </div>
+          <div className='drum-pad-row'>
+            {drumPadList[3]}
+            {drumPadList[4]}
+            {drumPadList[5]}
+          </div>
+          <div className='drum-pad-row'>
+            {drumPadList[6]}
+            {drumPadList[7]}
+            {drumPadList[8]}
+          </div>
+        </div>
+        <div className="drum-controls">
+          <Toggle title={"Power"} toggle={this.state.powerToggle} toggleFunction={this.powerToggle} />
+          <Display display={this.state.powerToggle ? "" : this.state.displayText} />
+          <Toggle title={"Bank"} toggle={this.state.clipSetTwoToggle} toggleFunction={this.clipSetToggle} />
+        </div>
       </div>
     );
   }
