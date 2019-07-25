@@ -19,8 +19,10 @@ export default class DrumPadButton extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(!nextProps.power) {
+        if(nextProps.power !== this.props.power) {
+            console.log("The power prop has changed.");
             document.removeEventListener("keydown", (e) => {this.listenerFunction(e);});
+            this.props.handleEvent("");
         }
     }
 

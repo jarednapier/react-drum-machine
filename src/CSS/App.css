@@ -1,18 +1,17 @@
 .drum-machine-container {
   display: flex;
   flex-direction: row;
-  height: 600px;
-  width: 1000px;
+  height: 400px;
+  width: 800px;
   margin: 0 auto;
   background-color: rgba(111, 0, 255, 0.164);
   border-radius: 20px;
-  margin-top: 50px;
 }
 
 .drum-pad-elements {
   display: flex;
   flex-direction: column;
-  background-color: aliceblue;
+  justify-content: center;
   height: 100%;
   width: 50%;
 }
@@ -20,14 +19,13 @@
 .drum-pad-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
 .drum-controls {
   display: flex;
   flex-direction: column;
-  background-color: antiquewhite;
   justify-content: center;
   align-items: center;
   height: 100%;
