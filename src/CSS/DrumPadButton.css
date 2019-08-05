@@ -1,10 +1,20 @@
 .drum-pad {
     width: 100px;
     height: 100px;
-    background-color: aqua;
+    background-color: rgb(5,255,161);
     border-radius: 20px;
     outline: none;
 }
+
+@media only screen and (max-width: 600px) {
+    .drum-pad {
+        height: 50px;
+        width: 50px;
+    }
+    .drum-pad-text {
+        display: none;
+    }
+  } 
 
 .pad-wrapper {
     height: 100px;

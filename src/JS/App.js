@@ -4,6 +4,7 @@ import Display from './Display';
 import { SoundClips } from './SoundClips';
 import Toggle from './Toggle';
 import DrumPadButton from './DrumPadButton';
+import { ReactComponent as Icon } from '../Media/logo.svg';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -26,7 +27,8 @@ export default class App extends React.Component {
   clipSetToggle = () => {
     this.setState({
       clipSetTwoToggle: !this.state.clipSetTwoToggle,
-      clipSet: this.state.clipSetTwoToggle ? SoundClips.clipSetTwo : SoundClips.clipSetOne
+      clipSet: this.state.clipSetTwoToggle ? SoundClips.clipSetTwo : SoundClips.clipSetOne,
+      displayText: ""
     });
   };
 
@@ -71,9 +73,13 @@ export default class App extends React.Component {
           </div>
         </div>
         <div className="drum-controls">
+          <div className="title-wrapper">
+            <Icon className="react-logo" />
+            <h3 className="h3-title">React Drum Machine</h3>
+          </div>
           <Toggle title={"Power"} toggle={this.state.powerToggle} toggleFunction={this.powerToggle} />
           <Display display={this.state.powerToggle ? "" : this.state.displayText} />
-          <Toggle title={"Bank"} toggle={this.state.clipSetTwoToggle} toggleFunction={this.clipSetToggle} />
+          {/* <Toggle title={"Bank"} toggle={this.state.clipSetTwoToggle} toggleFunction={this.clipSetToggle} /> */}
         </div>
       </div>
     );

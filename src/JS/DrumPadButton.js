@@ -7,7 +7,7 @@ export default class DrumPadButton extends React.Component {
         super(props);
         this.state = {
             // audio OBJECT, NOT the source of the clip itself
-            audio: null
+            audio: ""
         };
     }
 
@@ -24,6 +24,7 @@ export default class DrumPadButton extends React.Component {
             document.removeEventListener("keydown", (e) => {this.listenerFunction(e);});
             this.props.handleEvent("");
         }
+
     }
 
     listenerFunction = (e) => {
@@ -41,9 +42,10 @@ export default class DrumPadButton extends React.Component {
     };
 
     audioMethod = () => {
-
-        this.state.audio.load();
-        this.state.audio.play();
+        console.log("audioMethod triggered");
+        let clip = this.state.audio;
+        clip.currentTime = 0;
+        clip.play();
         this.props.handleEvent(this.props.description);
     };
 
@@ -52,7 +54,7 @@ export default class DrumPadButton extends React.Component {
             <div className="pad-wrapper">
                 <button 
                     className="drum-pad" 
-                    onClick={() => {
+                    onClick={this.props.power ? () => {return;} : () => {
                         this.audioMethod();
                     }}
                 >
