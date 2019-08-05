@@ -53,6 +53,7 @@ export default class DrumPadButton extends React.Component {
         return (
             <div className="pad-wrapper">
                 <button 
+                    id={`drum-pad-element ${this.props.numId}`}
                     className="drum-pad" 
                     onClick={this.props.power ? () => {return;} : () => {
                         this.audioMethod();
